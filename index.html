@@ -18,21 +18,92 @@
     <meta name="twitter:title" content="Layout_aria_CSS" />
     <meta name="twitter:description" content="Exemplo acessível de layout Flexbox com alinhamento central, ideal para portfólio no LinkedIn." />
     <meta name="twitter:image" content="https://matheussiqueirahub.github.io/layout_aria_CSS/assets/preview.png" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="assets/preview.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <header class="page-header">
-      <h1 id="layout-title">Layout_aria_CSS</h1>
-      <p class="subtitle">Flexbox centralizado horizontal e verticalmente</p>
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="brand">
+          <h1 id="layout-title" class="brand-title">Layout_aria_CSS</h1>
+          <p class="subtitle">Flexbox centralizado horizontal e verticalmente</p>
+        </div>
+        <nav class="site-nav" aria-label="Navegação do site">
+          <a href="#demo" class="nav-link">Demo</a>
+          <a href="#playground" class="nav-link">Playground</a>
+          <a href="#codigo" class="nav-link">Código</a>
+          <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Alternar tema claro/escuro">
+            <span aria-hidden="true">🌙</span>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="flex-container" role="group" aria-labelledby="group-title">
-        <h2 id="group-title" class="visually-hidden">Demonstração de caixas alinhadas com Flexbox</h2>
+      <section id="demo" class="hero-section">
+        <div class="flex-container" id="demo-container" role="group" aria-labelledby="group-title">
+          <h2 id="group-title" class="visually-hidden">Demonstração de caixas alinhadas com Flexbox</h2>
+          <div class="box" tabindex="0" aria-label="Caixa 1">Caixa 1</div>
+          <div class="box" tabindex="0" aria-label="Caixa 2">Caixa 2</div>
+          <div class="box" tabindex="0" aria-label="Caixa 3">Caixa 3</div>
+        </div>
+      </section>
 
-        <div class="box">Caixa 1</div>
-        <div class="box">Caixa 2</div>
-        <div class="box">Caixa 3</div>
+      <section id="playground" class="playground" aria-labelledby="playground-title">
+        <div class="container">
+          <h2 id="playground-title">Playground: ajuste o Flexbox ao vivo</h2>
+          <p class="lead">Experimente diferentes valores de alinhamento e veja o resultado imediatamente.</p>
+          <div class="controls" role="form" aria-describedby="controls-help">
+            <div class="control-group">
+              <label for="control-justify">justify-content</label>
+              <select id="control-justify">
+                <option value="center" selected>center</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="control-align">align-items</label>
+              <select id="control-align">
+                <option value="center" selected>center</option>
+                <option value="flex-start">flex-start</option>
+                <option value="flex-end">flex-end</option>
+                <option value="stretch">stretch</option>
+                <option value="baseline">baseline</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="control-gap">gap: <span id="gap-value">1.25rem</span></label>
+              <input id="control-gap" type="range" min="0" max="40" step="2" value="20" />
+            </div>
+            <div class="control-actions">
+              <button id="reset" class="btn">Reset</button>
+              <button id="copy-css" class="btn primary" aria-describedby="copy-hint">Copiar CSS</button>
+            </div>
+            <p id="controls-help" class="help">Altere as opções e observe as caixas na seção de demonstração.</p>
+            <p id="announce" class="visually-hidden" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="codigo" class="code-section" aria-labelledby="code-title">
+        <div class="container">
+          <h2 id="code-title">CSS essencial usado</h2>
+          <pre><code class="language-css">.flex-container {
+  display: flex;
+  justify-content: center;  /* eixo principal (horizontal) */
+  align-items: center;      /* eixo cruzado (vertical) */
+  min-height: 70vh;         /* ajuda a visualizar o alinhamento vertical */
+  gap: 1.25rem;
+}
+          </code></pre>
+          <p id="copy-hint" class="muted">Dica: use o botão “Copiar CSS” no playground para copiar os valores atuais.</p>
+        </div>
       </section>
     </main>
 
