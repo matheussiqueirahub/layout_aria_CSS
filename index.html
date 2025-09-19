@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layout_aria_CSS</title>
+    <meta
+      name="description"
+      content="Exemplo acessível de layout Flexbox com alinhamento central, ideal para portfólio no LinkedIn."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 id="layout-title">Layout_aria_CSS</h1>
+      <p class="subtitle">Flexbox centralizado horizontal e verticalmente</p>
+    </header>
+
+    <main>
+      <section class="flex-container" role="group" aria-labelledby="group-title">
+        <h2 id="group-title" class="visually-hidden">Demonstração de caixas alinhadas com Flexbox</h2>
+
+        <div class="box">Caixa 1</div>
+        <div class="box">Caixa 2</div>
+        <div class="box">Caixa 3</div>
+      </section>
+    </main>
+
+    <footer class="page-footer" aria-label="Rodapé">
+      <small>Feito com HTML + CSS (Flexbox)</small>
+    </footer>
+  </body>
+  </html>
