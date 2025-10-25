@@ -14,7 +14,6 @@ html, body { height: 100%; }
   --radius: 14px;
   --space: clamp(16px, 2vw, 24px);
 }
-.theme-dark:root,
 body.theme-dark{
   --bg: #0b1220;
   --bg-accent: #0f172a;
