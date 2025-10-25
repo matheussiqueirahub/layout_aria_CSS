@@ -16,11 +16,11 @@
     if (theme === 'dark') {
       root.classList.add('theme-dark');
       btnTheme.setAttribute('aria-pressed', 'true');
-      btnTheme.innerText = '☀️';
+      btnTheme.textContent = '☀️';
     } else {
       root.classList.remove('theme-dark');
       btnTheme.setAttribute('aria-pressed', 'false');
-      btnTheme.innerText = '🌙';
+      btnTheme.textContent = '🌙';
     }
   };
   const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
